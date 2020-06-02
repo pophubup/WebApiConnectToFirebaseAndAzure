@@ -46,7 +46,7 @@ namespace WebApplication1.Controllers
             return Ok( _products.GetAllCategory());
         }
         [HttpPost]
-        public async Task<IActionResult> CreateOrders([FromBody] Order orders)
+        public async Task<IActionResult> PostCreateOrders([FromBody] Order orders)
         {
             return Ok(await _products.CreateOrders(orders));
         }

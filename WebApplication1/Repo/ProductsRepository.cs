@@ -43,41 +43,25 @@ namespace WebApplication1.Repo
             //FireCloud
             if (!_cache.TryGetValue("AllProducts", out allproducts))
             {
-                List<Product> products = new List<Product>();
-                Query allCitiesQuery = db.Collection("Products");
-                QuerySnapshot allCitiesQuerySnapshot = await allCitiesQuery.GetSnapshotAsync();
-
-                foreach (DocumentSnapshot documentSnapshot in allCitiesQuerySnapshot.Documents)
-                {
-                    Product product = documentSnapshot.ConvertTo<Product>();
-                    products.Add(product);
-                }
-                //FireCloud
-                //Azure
-                CloudBlobContainer container = CreateInstance.Instance.cloudBlobContainer;
-                BlobContinuationToken continuationToken = null;
-                CloudBlob blob;
-                BlobResultSegment resultSegment = await container.ListBlobsSegmentedAsync(string.Empty, true, BlobListingDetails.Metadata, null, continuationToken, null, null);
-                foreach (var blobItem in resultSegment.Results)
-                {
-                    // A flat listing operation returns only blobs, not virtual directories.
-                    blob = (CloudBlob)blobItem;
-                    foreach (var i in products)
-                    {
-                        if (i.ProductName == blob.Name.Split('.')[0])
-                        {
-                            i.ProductImagePath = blob.Uri.ToString();
-                        }
-                    }
-
-                }
-                //Azure
+                List<Product> products = CreateInstance.Instance.GetProducts();
                 _cache.Set("AllProducts", products, TimeSpan.FromSeconds(600));
                 return products;
             }
             else
             {
-                allproducts = _cache.Get<List<Product>>("AllProducts");
+                int countProducts = db.Collection("Products").GetSnapshotAsync().GetAwaiter().GetResult().Count;
+              
+                if(allproducts.Count() == countProducts)
+                {
+                    allproducts = _cache.Get<List<Product>>("AllProducts");
+                }
+                else
+                {
+                   
+                    allproducts = CreateInstance.Instance.GetProducts();
+                    _cache.Set("AllProducts", allproducts, TimeSpan.FromSeconds(600));
+                }
+                
                 return allproducts;
             }
         }

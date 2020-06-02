@@ -7,8 +7,10 @@ using Microsoft.Extensions.FileProviders;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Auth;
 using Microsoft.WindowsAzure.Storage.Blob;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using WebApplication1.Models;
 
 namespace WebApplication1.Utility
 {
@@ -64,9 +66,45 @@ namespace WebApplication1.Utility
                 CloudStorageAccount account = new CloudStorageAccount(storageCredentials, true);
                 CloudBlobClient serviceClient = account.CreateCloudBlobClient();
                 CloudBlobContainer container = serviceClient.GetContainerReference("products");
+             
                 return container;
             }
         }
-     
+        public List<Product> GetProducts()
+        {
+            
+                List<Product> products = new List<Product>();
+                Query allCitiesQuery = CreateDB.Collection("Products");
+                QuerySnapshot allCitiesQuerySnapshot = allCitiesQuery.GetSnapshotAsync().GetAwaiter().GetResult();
+
+                foreach (DocumentSnapshot documentSnapshot in allCitiesQuerySnapshot.Documents)
+                {
+                    Product product = documentSnapshot.ConvertTo<Product>();
+                    products.Add(product);
+                }
+                //FireCloud
+                //Azure
+                CloudBlobContainer container = CreateInstance.Instance.cloudBlobContainer;
+                BlobContinuationToken continuationToken = null;
+                CloudBlob blob;
+                BlobResultSegment resultSegment =  container.ListBlobsSegmentedAsync(string.Empty, true, BlobListingDetails.Metadata, null, continuationToken, null, null).GetAwaiter().GetResult();
+                foreach (var blobItem in resultSegment.Results)
+                {
+                    // A flat listing operation returns only blobs, not virtual directories.
+                    blob = (CloudBlob)blobItem;
+                    foreach (var i in products)
+                    {
+                        if (i.ProductName == blob.Name.Split('.')[0])
+                        {
+                            i.ProductImagePath = blob.Uri.ToString();
+                        }
+                    }
+
+                }
+            //Azure
+            return products;
+            
+        }
+
     }
 }
