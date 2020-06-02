@@ -17,26 +17,25 @@ namespace WebApplication1.Controllers
 {
     [EnableCors]
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     public class DefaultController : ControllerBase
     {
         private readonly ILogger<DefaultController> _logger;
         private IProducts _products;
-        private IWebHostEnvironment _hostingEnvironment;
-        public DefaultController(ILogger<DefaultController> logger, IWebHostEnvironment hostingEnvironment, IProducts products)
+
+        public DefaultController(ILogger<DefaultController> logger, IProducts products)
         {
             _logger = logger;
-            _hostingEnvironment = hostingEnvironment;
             _products = products;
 
         }
         
-        [HttpGet("GetProducts")]
+        [HttpGet]
         public async Task<IActionResult> GetProducts()
         {
             return Ok(await _products.GetAllProducts());
         }
-        [HttpGet("GetProducts/{productID}")]
+        [HttpGet("{productID}")]
         public async Task<IActionResult> GetProducts(string productID)
         {
             return Ok(await _products.GetProduct(productID));

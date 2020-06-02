@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jyhos05g5a3nFoT0Uy+9blp9GeSvzKhq1jr6LEgvyAuxc7o7PN5IDtnv7DPBteQObCKWno4al8Klk2p9lWMrUw==",
+  "dgSpecHash": "U6AS6IVa0FHkEJLY0vEdeA1eJODQ+xX/M17NYaxzPSAhyKNOuxu+QpEkb/CUX72MhUdG6tWh1F5X61TDKEpM/w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\teres\\source\\repos\\pophubup\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\WebApplication1.csproj",
+  "projectFilePath": "C:\\Users\\teres\\Source\\Repos\\pophubup\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\teres\\.nuget\\packages\\google.api.commonprotos\\1.7.0\\google.api.commonprotos.1.7.0.nupkg.sha512",
     "C:\\Users\\teres\\.nuget\\packages\\google.api.gax\\2.10.0\\google.api.gax.2.10.0.nupkg.sha512",

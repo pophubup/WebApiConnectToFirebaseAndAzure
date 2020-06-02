@@ -12,7 +12,7 @@ namespace WebApplication1.Repo
 {
     public class OrdersRepository : IOrders
     {
-        private static FirestoreDb db = CreateInstance.Instance.CreateDB();
+        private static FirestoreDb db = CreateInstance.Instance.CreateDB;
         private static IMemoryCache _cache;
         public OrdersRepository(IMemoryCache cache)
         {

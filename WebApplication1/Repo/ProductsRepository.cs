@@ -2,6 +2,7 @@
 using Google.Cloud.Firestore;
 using Google.Cloud.Firestore.V1;
 using Grpc.Auth;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
@@ -22,13 +23,15 @@ namespace WebApplication1.Repo
 {
     public class ProductsRepository : IProducts
     {
-        private static  FirestoreDb db = CreateInstance.Instance.CreateDB();
+        private static  FirestoreDb db = CreateInstance.Instance.CreateDB;
         private static IMemoryCache _cache;
         private static IOrders _orders;
-        public ProductsRepository(IMemoryCache cache, IOrders orders)
+        private IWebHostEnvironment _hostingEnvironment;
+        public ProductsRepository(IMemoryCache cache, IWebHostEnvironment hostingEnvironment, IOrders orders)
         {
             _cache = cache;
             _orders = orders;
+            _hostingEnvironment = hostingEnvironment;
         }
         public List<Category> GetAllCategory()
         {
@@ -51,7 +54,7 @@ namespace WebApplication1.Repo
                 }
                 //FireCloud
                 //Azure
-                CloudBlobContainer container = CreateInstance.Instance.cloudBlobContainer();
+                CloudBlobContainer container = CreateInstance.Instance.cloudBlobContainer;
                 BlobContinuationToken continuationToken = null;
                 CloudBlob blob;
                 BlobResultSegment resultSegment = await container.ListBlobsSegmentedAsync(string.Empty, true, BlobListingDetails.Metadata, null, continuationToken, null, null);
@@ -96,7 +99,7 @@ namespace WebApplication1.Repo
                         CategoryID = Convert.ToInt32(i.CategoryID),
                         ProductDescription = i.ProductDescription,
                         ProductID = i.ProductID,
-                        ProductImagePath = i.ProductImagePath,
+                        ProductImagePath = i.ProductName + ".png",
                         ProductName = i.ProductName,
                         ProductPrice = Convert.ToDouble(i.ProductPrice),
                         Quantity = Convert.ToInt32(i.Quantity)
@@ -104,56 +107,42 @@ namespace WebApplication1.Repo
                     };
                     datalist.Add(_model);
                 }
-           Task<List<Product>> data =  Task.Run(async () =>
-            {
+          
                 foreach (Product i in datalist)
                 {
-                    if (i.ProductID == "0")
-                    {
+                   
                         string procid = string.Empty;
                         Random random = new Random();
-                        string combineIndex = "abcdefg";
+                        string combineIndex = "abcdefghlijkmnopqr";
                         for (int j = 0; j < 3; j++)
                         {
-                            int index1 = random.Next(0, 6);
-                            int index2 = random.Next(0, 6);
                             int procnumber = random.Next(0, 6);
-                            procid += procnumber.ToString() + combineIndex[index1].ToString() + combineIndex[index1].ToString();
+                            procid += procnumber.ToString() + combineIndex[random.Next(0, 6)].ToString() + combineIndex[random.Next(0, 6)].ToString();
                         }
                         i.ProductID = procid;
                         DocumentReference addedDocRef = db.Collection("Products").Document(i.ProductName);
                         await addedDocRef.CreateAsync(i);
+                        i.ProductImagePath = products.FirstOrDefault(x=>x.ProductName == i.ProductName).ProductImagePath;
                         keeper.Add(i);
-                    }
-                    else
-                    {
-                        Product product1 = datalist.FirstOrDefault(x => x.ProductName == i.ProductName);
-                        if (product1 == null)
-                        {
-
-                            DocumentReference addedDocRef = db.Collection("Products").Document(i.ProductName);
-                            await addedDocRef.CreateAsync(i);
-                            keeper.Add(i);
-                        }
-                    }
+                    
+                    
 
                 }
-                return keeper;
-            });
+             
           
-            return await data;
+            return keeper;
         }
         public async Task<bool> SaveImageToBlobstroage(List<Product> products)
         {
-            //string subfolder = @"\Images";
-            //string path = _hostingEnvironment.ContentRootPath + subfolder;
-            string path = @"D:\home\site\wwwroot\images";
+            string subfolder = @"\Images";
+            string path = _hostingEnvironment.ContentRootPath + subfolder;
+            //string path = @"D:\home\site\wwwroot\images";
             List<string> result = Base64ToImage.runMutipleData(products, path);
             int countsave = 0;
             foreach (Product i in products)
             {
                 string checktype = i.ProductImagePath.Split(',')[0].Split('/')[1];
-                CloudBlobContainer container = CreateInstance.Instance.cloudBlobContainer();
+                CloudBlobContainer container = CreateInstance.Instance.cloudBlobContainer;
                 IFileInfo file;
                 if (checktype.Contains("png"))
                 {

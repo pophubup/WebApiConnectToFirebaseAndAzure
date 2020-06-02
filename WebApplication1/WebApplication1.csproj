@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Utility\ImageCreator.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="FireBaseApikey\" />
     <Folder Include="Images\" />
   </ItemGroup>
