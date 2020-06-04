@@ -70,7 +70,7 @@ namespace WebApplication1.Utility
                 return container;
             }
         }
-        public List<Product> GetProducts()
+        public IQueryable<Product> GetProducts()
         {
             
                 List<Product> products = new List<Product>();
@@ -102,7 +102,7 @@ namespace WebApplication1.Utility
 
                 }
             //Azure
-            return products;
+            return products.AsQueryable() ;
             
         }
 

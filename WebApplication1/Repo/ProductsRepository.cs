@@ -15,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using WebApplication1.Models;
 using WebApplication1.Utility;
@@ -37,15 +38,15 @@ namespace WebApplication1.Repo
         {
             return Categories.GetCategoryID();
         }
-        public async Task<List<Product>> GetAllProducts()
+        public async Task<IQueryable<Product>> GetAllProducts()
         {
-            List<Product> allproducts = new List<Product>();
+            IQueryable<Product> allproducts;
             //FireCloud
             if (!_cache.TryGetValue("AllProducts", out allproducts))
             {
-                List<Product> products = CreateInstance.Instance.GetProducts();
-                _cache.Set("AllProducts", products, TimeSpan.FromSeconds(600));
-                return products;
+                allproducts = CreateInstance.Instance.GetProducts().AsQueryable();
+                _cache.Set("AllProducts", allproducts, TimeSpan.FromSeconds(600));
+                return allproducts;
             }
             else
             {
@@ -53,7 +54,7 @@ namespace WebApplication1.Repo
               
                 if(allproducts.Count() == countProducts)
                 {
-                    allproducts = _cache.Get<List<Product>>("AllProducts");
+                    allproducts = _cache.Get<IQueryable<Product>>("AllProducts");
                 }
                 else
                 {
@@ -65,10 +66,17 @@ namespace WebApplication1.Repo
                 return allproducts;
             }
         }
-        public async Task<Product> GetProduct(string ProductID)
+        public async Task<IEnumerable<Product>> GetProduct(Product Product)
         {        
-            List<Product> datalist = await GetAllProducts();
-            Product result = datalist.FirstOrDefault(x => x.ProductID == ProductID);
+            IQueryable<Product> datalist = await GetAllProducts();
+
+            ProductQueryConditions productQueryConditions = new ProductQueryConditions()
+            {
+                ProductID = new QueryCondition<string>(QueryComparsion.Equal, Product.ProductID != null ? Product.ProductID : ""),
+
+            };
+            ProductQueryConditionsResolver productQueryConditionsResolver = new ProductQueryConditionsResolver(productQueryConditions);
+            IEnumerable<Product> result = datalist.Where(productQueryConditionsResolver.Resolve()).AsEnumerable();
             return result;
         }
         public async Task<List<Product>> SaveNewProducts(List<NewProducts> products)
@@ -158,7 +166,7 @@ namespace WebApplication1.Repo
             
             DocumentReference docRef = db.Collection("Orders").Document(orders.OrderID);
              await docRef.CreateAsync(orders.orderDetails);
-            List<Product> products = await GetAllProducts();
+            IQueryable<Product> products = await GetAllProducts();
             List<Product> datalist = new List<Product>();
             foreach (var i in orders.orderDetails.ProductID)
             {
@@ -170,7 +178,7 @@ namespace WebApplication1.Repo
         public async Task<List<OrderProducts>> GetOrderProducts()
         {
             List<OrderDetails> orderDetails = await _orders.GetOrder();  
-            List<Product> products = await GetAllProducts();
+            IQueryable<Product> products = await GetAllProducts();
             List<OrderProducts> orderProducts = new List<OrderProducts>();
             Task<List<OrderProducts>> data = Task.Run(() =>
             {

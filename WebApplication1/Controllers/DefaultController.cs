@@ -35,10 +35,10 @@ namespace WebApplication1.Controllers
         {
             return Ok(await _products.GetAllProducts());
         }
-        [HttpGet("{productID}")]
-        public async Task<IActionResult> GetProducts(string productID)
+        [HttpPost]
+        public async Task<IActionResult> GetProducts([FromBody] Product product)
         {
-            return Ok(await _products.GetProduct(productID));
+            return Ok(await _products.GetProduct(product));
         }
         [HttpGet]
         public IActionResult GetAllCategory()
