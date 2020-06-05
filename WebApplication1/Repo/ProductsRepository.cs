@@ -72,8 +72,9 @@ namespace WebApplication1.Repo
 
             ProductQueryConditions productQueryConditions = new ProductQueryConditions()
             {
-                ProductID = new QueryCondition<string>(QueryComparsion.Equal, Product.ProductID != null ? Product.ProductID : ""),
-
+                ProductID = new QueryCondition<string>(QueryComparsion.Equal, Product.ProductID != null ? Product.ProductID : null),
+                CategoryID = new QueryCondition<int>(QueryComparsion.Equal,Product.CategoryID != 0 ?  Product.CategoryID : 0 ),
+                ProductName = new QueryCondition<string>(QueryComparsion.StartsWith, Product.ProductName != null ? Product.ProductName : null)
             };
             ProductQueryConditionsResolver productQueryConditionsResolver = new ProductQueryConditionsResolver(productQueryConditions);
             IEnumerable<Product> result = datalist.Where(productQueryConditionsResolver.Resolve()).AsEnumerable();
@@ -89,10 +90,10 @@ namespace WebApplication1.Repo
                     Product _model = new Product()
                     {
                         CategoryID = Convert.ToInt32(i.CategoryID),
-                        ProductDescription = i.ProductDescription,
+                        ProductDescription = i.ProductDescription.Trim(),
                         ProductID = i.ProductID,
-                        ProductImagePath = i.ProductName + ".png",
-                        ProductName = i.ProductName,
+                        ProductImagePath = i.ProductName.Trim() + ".png",
+                        ProductName = i.ProductName.Trim(),
                         ProductPrice = Convert.ToDouble(i.ProductPrice),
                         Quantity = Convert.ToInt32(i.Quantity)
 

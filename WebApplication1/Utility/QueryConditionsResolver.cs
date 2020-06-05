@@ -66,9 +66,14 @@ namespace WebApplication1.Utility
                     default:
                         throw new NotSupportedException("不支援此類型");
                 }
-
+                
                 this.predicate = Expression.And(this.predicate, expression);
             }
+        }
+
+        protected void Or<TValue>(QueryCondition<TValue> queryCondition, string entryFieldName)
+        {
+
         }
     }
 
