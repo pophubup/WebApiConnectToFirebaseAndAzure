@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "U6AS6IVa0FHkEJLY0vEdeA1eJODQ+xX/M17NYaxzPSAhyKNOuxu+QpEkb/CUX72MhUdG6tWh1F5X61TDKEpM/w==",
+  "dgSpecHash": "deMv60Udr89TVOI1MUq8CNDfc7jj309BBd8/YbTOdebjccOubAnJuxGEz+xnqUZWPzRbZL+p6NVGEWdtbSG1Cw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\teres\\Source\\Repos\\pophubup\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\WebApplication1.csproj",
+  "projectFilePath": "C:\\Users\\teres\\source\\repos\\pophubup\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\teres\\.nuget\\packages\\google.api.commonprotos\\1.7.0\\google.api.commonprotos.1.7.0.nupkg.sha512",
     "C:\\Users\\teres\\.nuget\\packages\\google.api.gax\\2.10.0\\google.api.gax.2.10.0.nupkg.sha512",
@@ -17,6 +17,7 @@
     "C:\\Users\\teres\\.nuget\\packages\\grpc.auth\\1.22.0\\grpc.auth.1.22.0.nupkg.sha512",
     "C:\\Users\\teres\\.nuget\\packages\\grpc.core\\1.22.1\\grpc.core.1.22.1.nupkg.sha512",
     "C:\\Users\\teres\\.nuget\\packages\\grpc.core.api\\1.22.1\\grpc.core.api.1.22.1.nupkg.sha512",
+    "C:\\Users\\teres\\.nuget\\packages\\line.messaging\\1.4.5\\line.messaging.1.4.5.nupkg.sha512",
     "C:\\Users\\teres\\.nuget\\packages\\microsoft.aspnet.cors\\5.2.7\\microsoft.aspnet.cors.5.2.7.nupkg.sha512",
     "C:\\Users\\teres\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
     "C:\\Users\\teres\\.nuget\\packages\\microsoft.aspnet.webapi.core\\5.2.7\\microsoft.aspnet.webapi.core.5.2.7.nupkg.sha512",

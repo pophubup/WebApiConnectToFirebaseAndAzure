@@ -67,7 +67,9 @@ namespace WebApplication1.Repo
             }
         }
         public async Task<IEnumerable<Product>> GetProduct(Product Product)
-        {        
+        {
+
+
             IQueryable<Product> datalist = await GetAllProducts();
 
             ProductQueryConditions productQueryConditions = new ProductQueryConditions()

@@ -202,6 +202,19 @@
           "lib/netstandard2.0/Grpc.Core.Api.dll": {}
         }
       },
+      "Line.Messaging/1.4.5": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "compile": {
+          "lib/netstandard1.3/Line.Messaging.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Line.Messaging.dll": {}
+        }
+      },
       "Microsoft.AspNet.Cors/5.2.7": {
         "type": "package",
         "compile": {
@@ -1818,6 +1831,19 @@
         "lib/netstandard2.0/Grpc.Core.Api.dll",
         "lib/netstandard2.0/Grpc.Core.Api.pdb",
         "lib/netstandard2.0/Grpc.Core.Api.xml"
+      ]
+    },
+    "Line.Messaging/1.4.5": {
+      "sha512": "IIMWjqf3uWcTTBc1BBY/ou2R4oGLleDqcH7HHEj3glsSQoh2HPX+lpgakny+jWU08Zh3DIw9vPvp6cjOEiwF4w==",
+      "type": "package",
+      "path": "line.messaging/1.4.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard1.3/Line.Messaging.dll",
+        "lib/netstandard1.3/Line.Messaging.xml",
+        "line.messaging.1.4.5.nupkg.sha512",
+        "line.messaging.nuspec"
       ]
     },
     "Microsoft.AspNet.Cors/5.2.7": {
@@ -5292,6 +5318,7 @@
       "Google.Cloud.Firestore.V1 >= 1.1.0",
       "Grpc.Auth >= 1.22.0",
       "Grpc.Core >= 1.22.1",
+      "Line.Messaging >= 1.4.5",
       "Microsoft.AspNet.WebApi.Cors >= 5.2.7",
       "System.Drawing.Common >= 4.7.0",
       "WindowsAzure.Storage >= 9.3.3"
@@ -5304,11 +5331,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\teres\\Source\\Repos\\pophubup\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\teres\\source\\repos\\pophubup\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\teres\\Source\\Repos\\pophubup\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\WebApplication1.csproj",
+      "projectPath": "C:\\Users\\teres\\source\\repos\\pophubup\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\WebApplication1.csproj",
       "packagesPath": "C:\\Users\\teres\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\teres\\Source\\Repos\\pophubup\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\obj\\",
+      "outputPath": "C:\\Users\\teres\\source\\repos\\pophubup\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5357,6 +5384,10 @@
           "Grpc.Core": {
             "target": "Package",
             "version": "[1.22.1, )"
+          },
+          "Line.Messaging": {
+            "target": "Package",
+            "version": "[1.4.5, )"
           },
           "Microsoft.AspNet.WebApi.Cors": {
             "target": "Package",

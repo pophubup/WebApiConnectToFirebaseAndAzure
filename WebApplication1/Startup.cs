@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WebApplication1.Models;
 using WebApplication1.Repo;
 
 namespace WebApplication1
@@ -14,13 +15,13 @@ namespace WebApplication1
         public IConfiguration Configuration { get; }
         public Startup(IConfiguration configuration )
         {
-            var builder = new ConfigurationBuilder()
+            var configurationRoot = new ConfigurationBuilder()
               .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
               .AddEnvironmentVariables()
               .Build();
           
 
-            Configuration = builder;
+            Configuration = configurationRoot;
         }
 
       
@@ -29,6 +30,15 @@ namespace WebApplication1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMemoryCache();
+            services.AddSingleton<LineBotConfig, LineBotConfig>((s) => new LineBotConfig
+            {
+                channelSecret = Configuration["LineBot:channelSecret"],
+                accessToken = Configuration["LineBot:accessToken"],
+                user_ID = Configuration["LineBot:user_ID"]
+            });
+            services.AddHttpContextAccessor();
+            services.AddRazorPages();
+
             services.AddSingleton<IProducts, ProductsRepository>();
             services.AddSingleton<IOrders, OrdersRepository>();
             services.Configure<ApiBehaviorOptions>(options =>
@@ -66,7 +76,7 @@ namespace WebApplication1
             {
                 app.UseDeveloperExceptionPage();
             }
-
+           
             app.UseRouting();
             app.UseAuthorization();
             app.UseCors();

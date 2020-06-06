@@ -60,6 +60,7 @@ namespace WebApplication1.Utility
         {
             get
             {
+                IFileInfo fileInfo = _fileProvider.GetFileInfo("appsettings.json");
                 string key1 = configuration["BlobStorageAccount:AccountName"];
                 string key2 = configuration["BlobStorageAccount:AccountKey"];
                 StorageCredentials storageCredentials = new StorageCredentials(key1, key2);
