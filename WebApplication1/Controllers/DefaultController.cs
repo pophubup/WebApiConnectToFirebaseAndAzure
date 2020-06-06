@@ -1,6 +1,7 @@
 ﻿using Google.Type;
 using Line.Messaging;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
@@ -80,17 +81,33 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public async Task<IActionResult> onMessageReply()
         {
+            try
+            {
 
-            var events = await HttpContext.Request.GetWebhookEventsAsync("5471e6d16e61805659d4d674aa02fbb0", _lineBotConfig.user_ID);
-            var lineMessagingClient = new LineMessagingClient(_lineBotConfig.accessToken);
-            var lineBotApp = new LineBotApp(lineMessagingClient);
-            await lineBotApp.RunAsync(events);
+                var events = await HttpContext.Request.GetWebhookEventsAsync("5471e6d16e61805659d4d674aa02fbb0", _lineBotConfig.user_ID);
+                var lineMessagingClient = new LineMessagingClient(_lineBotConfig.accessToken);
+                var lineBotApp = new LineBotApp(lineMessagingClient);
+                await lineBotApp.RunAsync(events);
+                return Ok();
+            }
+            catch(Exception ex)
+            {
+                return Content(ex.Message);
+            }
 
-            return Ok();
+
+            
 
         }
         [HttpGet]
         public async Task<IActionResult> Test()
+        {
+            string my = "DateTime : " + DateTime.Now.ToString();
+            return Ok(my);
+
+        }
+        [HttpGet]
+        public async Task<IActionResult> Test22()
         {
             string my = "DateTime : " + DateTime.Now.ToString();
             return Ok(my);
