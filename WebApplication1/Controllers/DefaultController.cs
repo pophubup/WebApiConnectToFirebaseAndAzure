@@ -1,4 +1,5 @@
-﻿using Line.Messaging;
+﻿using Google.Type;
+using Line.Messaging;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -91,7 +92,8 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public async Task<IActionResult> Test()
         {
-            return Ok("12333");
+            string my = "DateTime : " + DateTime.Now.ToString();
+            return Ok(my);
 
         }
         //[HttpGet]
