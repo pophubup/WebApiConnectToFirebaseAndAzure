@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using WebApplication1.Models;
 using WebApplication1.Repo;
@@ -36,6 +38,7 @@ namespace WebApplication1
                 accessToken = Configuration["LineBot:accessToken"],
                 user_ID = Configuration["LineBot:user_ID"]
             });
+            services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddHttpContextAccessor();
             services.AddRazorPages();
 

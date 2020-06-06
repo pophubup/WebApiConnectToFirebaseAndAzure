@@ -88,6 +88,12 @@ namespace WebApplication1.Controllers
             return Ok();
 
         }
+        [HttpGet]
+        public async Task<IActionResult> Test()
+        {
+            return Ok("12333");
+
+        }
         //[HttpGet]
         // public async Task<IActionResult> onMessageReply()
         //{
