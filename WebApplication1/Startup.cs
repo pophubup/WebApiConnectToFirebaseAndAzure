@@ -55,15 +55,15 @@ namespace WebApplication1
             //    };
             //});
             services.AddControllers();
-            services.AddCors(options =>
-            {
-                options.AddDefaultPolicy(
-                    builder =>
-                    {
-                        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-                    });
+            //services.AddCors(options =>
+            //{
+            //    options.AddDefaultPolicy(
+            //        builder =>
+            //        {
+            //            builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+            //        });
 
-            });
+            //});
 
         }
 
@@ -79,7 +79,7 @@ namespace WebApplication1
             app.UseRouting();
             app.UseAuthorization();
             app.UseHttpsRedirection();
-            app.UseCors();
+            //app.UseCors();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
