@@ -84,7 +84,7 @@ namespace WebApplication1.Controllers
             try
             {
 
-                var events = await HttpContext.Request.GetWebhookEventsAsync("5471e6d16e61805659d4d674aa02fbb0", _lineBotConfig.user_ID);
+                var events = await HttpContext.Request.GetWebhookEventsAsync(_lineBotConfig.accessToken, _lineBotConfig.user_ID);
                 var lineMessagingClient = new LineMessagingClient(_lineBotConfig.accessToken);
                 var lineBotApp = new LineBotApp(lineMessagingClient);
                 await lineBotApp.RunAsync(events);
