@@ -11,7 +11,7 @@ using WebApplication1.Repo;
 
 namespace WebApplication1.Controllers
 {
-    [EnableCors]
+    //[EnableCors]
     [ApiController]
     [Route("api/[controller]/[action]")]
     public class DefaultController : ControllerBase
