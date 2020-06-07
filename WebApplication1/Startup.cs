@@ -80,15 +80,13 @@ namespace WebApplication1
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthorization();
-            
-           
             app.UseCors();
             app.UseEndpoints(endpoints =>
             {
-                //endpoints.MapControllers();
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=LineBot}/{action=Post}/{id?}");
+                endpoints.MapControllers();
+                //endpoints.MapControllerRoute(
+                //    name: "default",
+                //    pattern: "{controller=LineBot}/{action=Post}/{id?}");
             });
         }
     }
