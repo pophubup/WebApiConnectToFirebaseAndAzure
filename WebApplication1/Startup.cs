@@ -11,7 +11,7 @@ using WebApplication1.Repo;
 
 namespace WebApplication1
 {
-    //[System.Runtime.InteropServices.ComVisible(true)]
+
     public class Startup
     {
         public IConfiguration Configuration { get; }
@@ -39,35 +39,32 @@ namespace WebApplication1
                 user_ID = Configuration["LineBot:user_ID"]
             });
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddHttpContextAccessor();
-            services.AddRazorPages();
-
             services.AddSingleton<IProducts, ProductsRepository>();
             services.AddSingleton<IOrders, OrdersRepository>();
-            services.Configure<ApiBehaviorOptions>(options =>
-            {
-                options.InvalidModelStateResponseFactory = context =>
-                {
-                    var problemDetails = new ValidationProblemDetails(context.ModelState);
+            //services.Configure<ApiBehaviorOptions>(options =>
+            //{
+            //    options.InvalidModelStateResponseFactory = context =>
+            //    {
+            //        var problemDetails = new ValidationProblemDetails(context.ModelState);
 
-                    var result = new BadRequestObjectResult(problemDetails);
+            //        var result = new BadRequestObjectResult(problemDetails);
 
-                    result.ContentTypes.Add("application/problem+json");
-                    result.ContentTypes.Add("application/problem+xml");
+            //        result.ContentTypes.Add("application/problem+json");
+            //        result.ContentTypes.Add("application/problem+xml");
 
-                    return result;
-                };
-            });
-            services.AddControllers();
-            services.AddCors(options =>
-            {
-                options.AddDefaultPolicy(
-                    builder =>
-                    {
-                        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-                    });
+            //        return result;
+            //    };
+            //});
+            //services.AddControllers();
+            //services.AddCors(options =>
+            //{
+            //    options.AddDefaultPolicy(
+            //        builder =>
+            //        {
+            //            builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+            //        });
 
-            });
+            //});
 
         }
 

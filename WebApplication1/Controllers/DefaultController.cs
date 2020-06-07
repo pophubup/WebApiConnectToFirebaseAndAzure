@@ -99,24 +99,6 @@ namespace WebApplication1.Controllers
 
         }
         [HttpGet]
-        public async Task<IActionResult> Test()
-        {
-            string my = "DateTime : " + DateTime.Now.ToString();
-            
-            return Ok(my);
-
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> Test22()
-        {
-            string my = "DateTime : " + DateTime.Now.ToString();
-           
-        
-            return Ok(my);
-
-        }
-        [HttpGet]
         public async Task<IActionResult> onMessagePushy()
         {
             //get configuration from appsettings.json
