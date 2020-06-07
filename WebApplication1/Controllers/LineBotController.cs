@@ -13,7 +13,6 @@ using WebApplication1.Utility;
 
 namespace WebApplication1.Controllers
 {
-    [Route("api/[controller]/[action]")]
     public class LineBotController : Controller
     {
         private readonly IHttpContextAccessor _httpContextAccessor;

@@ -55,16 +55,16 @@ namespace WebApplication1
             //        return result;
             //    };
             //});
-            services.AddControllers();
-            services.AddCors(options =>
-            {
-                options.AddDefaultPolicy(
-                    builder =>
-                    {
-                        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-                    });
+            services.AddControllersWithViews();
+            //services.AddCors(options =>
+            //{
+            //    options.AddDefaultPolicy(
+            //        builder =>
+            //        {
+            //            builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+            //        });
 
-            });
+            //});
 
         }
 
@@ -76,15 +76,18 @@ namespace WebApplication1
             {
                 app.UseDeveloperExceptionPage();
             }
-           
-            app.UseRouting();
-            app.UseAuthorization();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseRouting();
+            app.UseAuthorization();
+            
+           
             //app.UseCors();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=LineBot}/{action=Post}/{id?}");
             });
         }
     }
