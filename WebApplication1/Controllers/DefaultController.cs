@@ -1,21 +1,13 @@
-﻿using Google.Type;
-using Line.Messaging;
-using Microsoft.AspNetCore.Cors;
-using Microsoft.AspNetCore.Diagnostics;
+﻿using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
 using System.Threading.Tasks;
 using WebApplication1.Models;
 using WebApplication1.Repo;
-using WebApplication1.Utility;
 
 namespace WebApplication1.Controllers
 {
@@ -26,21 +18,10 @@ namespace WebApplication1.Controllers
     {
         private readonly ILogger<DefaultController> _logger;
         private IProducts _products;
-        private readonly LineBotConfig _lineBotConfig;
-        private readonly HttpContext _httpContext;
-        private readonly IHttpContextAccessor _httpContextAccessor;
-        public DefaultController(
-            ILogger<DefaultController> logger,
-            IProducts products,
-            LineBotConfig lineBotConfig,
-            IServiceProvider serviceProvider
-            )
+        public DefaultController(ILogger<DefaultController> logger,IProducts products)
         {
             _logger = logger;
             _products = products;
-            _lineBotConfig = lineBotConfig;
-            _httpContextAccessor = serviceProvider.GetRequiredService<IHttpContextAccessor>();
-            _httpContext = _httpContextAccessor.HttpContext;
         }
         
         [HttpGet]
