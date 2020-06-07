@@ -94,7 +94,7 @@ namespace WebApplication1.Controllers
                                 var tmp = new isRock.LineBot.ButtonsTemplate()
                                 {
                                     text = "Button Template text",
-                                    title = "Button Template title"
+                                    title = "Button Template title",
                                     thumbnailImageUrl = new Uri("https://i.imgur.com/wVpGCoP.png"),
                                 };
 
