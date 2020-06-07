@@ -17,11 +17,11 @@ namespace WebApplication1
         public IConfiguration Configuration { get; }
         public Startup(IConfiguration configuration )
         {
-            //var configurationRoot = new ConfigurationBuilder()
-            //  .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-            //  .AddEnvironmentVariables()
-            //  .Build();
-          
+            var configurationRoot = new ConfigurationBuilder()
+              .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+              .AddEnvironmentVariables()
+              .Build();
+
 
             Configuration = configuration;
         }
@@ -41,30 +41,30 @@ namespace WebApplication1
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSingleton<IProducts, ProductsRepository>();
             services.AddSingleton<IOrders, OrdersRepository>();
-            //services.Configure<Microsoft.AspNetCore.Mvc.ApiBehaviorOptions>(options =>
-            //{
-            //    options.InvalidModelStateResponseFactory = context =>
-            //    {
-            //        var problemDetails = new ValidationProblemDetails(context.ModelState);
+            services.Configure<Microsoft.AspNetCore.Mvc.ApiBehaviorOptions>(options =>
+            {
+                options.InvalidModelStateResponseFactory = context =>
+                {
+                    var problemDetails = new ValidationProblemDetails(context.ModelState);
 
-            //        var result = new BadRequestObjectResult(problemDetails);
+                    var result = new BadRequestObjectResult(problemDetails);
 
-            //        result.ContentTypes.Add("application/problem+json");
-            //        result.ContentTypes.Add("application/problem+xml");
+                    result.ContentTypes.Add("application/problem+json");
+                    result.ContentTypes.Add("application/problem+xml");
 
-            //        return result;
-            //    };
-            //});
+                    return result;
+                };
+            });
             services.AddControllersWithViews();
-            //services.AddCors(options =>
-            //{
-            //    options.AddDefaultPolicy(
-            //        builder =>
-            //        {
-            //            builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-            //        });
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                    });
 
-            //});
+            });
 
         }
 
