@@ -31,7 +31,7 @@ namespace WebApplication1.Controllers
         {
             try
             {
-                var events = await _httpContext.Request.GetWebhookEventsAsync("842dbf693e99e5fd75e83f8200250109");
+                var events = await _httpContext.Request.GetWebhookEventsAsync(_lineBotConfig.channelSecret);
                 var lineMessagingClient = new LineMessagingClient(_lineBotConfig.accessToken);
                 var lineBotApp = new LineBotApp(lineMessagingClient);
                 await lineBotApp.RunAsync(events);
@@ -49,8 +49,8 @@ namespace WebApplication1.Controllers
         public IActionResult onMessagePushy()
         {
             //get configuration from appsettings.json
-            var token = "RG0IloNI+yCgdqoTv5s5V98isIFeS67I1FSdlNs/wEU84X5xfNH6x4jEgznsZ8geonJ+igrHae4L07FkU0IYOa8RjQUJ90OHhrbHXa2cllvDMNICVZkVoeAZkmqLQh3MAz0/FllCM/KXaQ+wgYgrGQdB04t89/1O/w1cDnyilFU=";// _config.GetSection("LINE-Bot-Setting:channelAccessToken");
-            var AdminUserId = "U8e75dde4f4dddc3510f7a37200531788";// _config.GetSection("LINE-Bot-Setting:adminUserID");
+            var token = _lineBotConfig.accessToken; ;
+            var AdminUserId = _lineBotConfig.user_ID;
             var body = ""; //for JSON Body
             //create vot instance
             var bot = new isRock.LineBot.Bot(token);
@@ -67,7 +67,6 @@ namespace WebApplication1.Controllers
                 {
                     body = reader.ReadToEndAsync().Result;
                 }
-                bot.PushMessage(AdminUserId, "Exception : \n" + body);
                 //parsing JSON
                 var ReceivedMessage = isRock.LineBot.Utility.Parsing(body);
                 //Get LINE Event
