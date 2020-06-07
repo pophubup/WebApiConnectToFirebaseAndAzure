@@ -219,3 +219,9 @@ C:\Users\teres\source\repos\Linbot66666\WebApiConnectToFirebaseAndAzure\WebAppli
 C:\Users\teres\source\repos\Linbot66666\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.dll
 C:\Users\teres\source\repos\Linbot66666\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.pdb
 C:\Users\teres\source\repos\Linbot66666\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.genruntimeconfig.cache
+C:\Users\teres\source\repos\Linbot66666\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\LineBotSDK.dll
+C:\Users\teres\source\repos\Linbot66666\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\teres\source\repos\Linbot66666\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Users\teres\source\repos\Linbot66666\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.csproj.CoreCompileInputs.cache
+C:\Users\teres\source\repos\Linbot66666\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\teres\source\repos\Linbot66666\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.MvcApplicationPartsAssemblyInfo.cache
