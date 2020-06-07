@@ -17,13 +17,13 @@ namespace WebApplication1
         public IConfiguration Configuration { get; }
         public Startup(IConfiguration configuration )
         {
-            var configurationRoot = new ConfigurationBuilder()
-              .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-              .AddEnvironmentVariables()
-              .Build();
+            //var configurationRoot = new ConfigurationBuilder()
+            //  .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+            //  .AddEnvironmentVariables()
+            //  .Build();
 
 
-            Configuration = configurationRoot;
+            Configuration = configuration;
         }
 
       
