@@ -46,8 +46,7 @@ namespace WebApplication1.Controllers
 
 
         }
-        [HttpGet]
-        public async Task<IActionResult> onMessagePushy()
+        public IActionResult onMessagePushy()
         {
             //get configuration from appsettings.json
             var token = "RG0IloNI+yCgdqoTv5s5V98isIFeS67I1FSdlNs/wEU84X5xfNH6x4jEgznsZ8geonJ+igrHae4L07FkU0IYOa8RjQUJ90OHhrbHXa2cllvDMNICVZkVoeAZkmqLQh3MAz0/FllCM/KXaQ+wgYgrGQdB04t89/1O/w1cDnyilFU=";// _config.GetSection("LINE-Bot-Setting:channelAccessToken");
@@ -91,11 +90,11 @@ namespace WebApplication1.Controllers
                                 { text = "test action1", label = "test action1" };
                                 var act2 = new isRock.LineBot.MessageAction()
                                 { text = "test action2", label = "test action2" };
-
+                         
                                 var tmp = new isRock.LineBot.ButtonsTemplate()
                                 {
                                     text = "Button Template text",
-                                    title = "Button Template title",
+                                    title = "Button Template title"
                                     thumbnailImageUrl = new Uri("https://i.imgur.com/wVpGCoP.png"),
                                 };
 
