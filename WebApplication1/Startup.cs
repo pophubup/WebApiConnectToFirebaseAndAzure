@@ -23,7 +23,7 @@ namespace WebApplication1
               .Build();
 
 
-            Configuration = configuration;
+            Configuration = configurationRoot;
         }
 
       
