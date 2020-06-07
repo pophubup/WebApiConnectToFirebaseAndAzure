@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -55,16 +54,16 @@ namespace WebApplication1
             //        return result;
             //    };
             //});
-            //services.AddControllers();
-            //services.AddCors(options =>
-            //{
-            //    options.AddDefaultPolicy(
-            //        builder =>
-            //        {
-            //            builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-            //        });
+            services.AddControllers();
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                    });
 
-            //});
+            });
 
         }
 
@@ -79,6 +78,7 @@ namespace WebApplication1
            
             app.UseRouting();
             app.UseAuthorization();
+            app.UseHttpsRedirection();
             app.UseCors();
             app.UseEndpoints(endpoints =>
             {
