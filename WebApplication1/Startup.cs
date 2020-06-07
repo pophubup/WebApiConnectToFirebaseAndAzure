@@ -23,7 +23,7 @@ namespace WebApplication1
               .Build();
 
 
-            Configuration = configurationRoot;
+            Configuration = Configuration;
         }
 
       
@@ -85,10 +85,10 @@ namespace WebApplication1
             //app.UseCors();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
-                //endpoints.MapControllerRoute(
-                //    name: "default",
-                //    pattern: "{controller=LineBot}/{action=Post}/{id?}");
+                //endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=LineBot}/{action=Post}/{id?}");
             });
         }
     }
