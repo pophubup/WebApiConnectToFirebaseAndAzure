@@ -85,9 +85,10 @@ namespace WebApplication1
             //app.UseCors();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=LineBot}/{action=Post}/{id?}");
+                endpoints.MapControllers();
+                //endpoints.MapControllerRoute(
+                //    name: "default",
+                //    pattern: "{controller=LineBot}/{action=Post}/{id?}");
             });
         }
     }
