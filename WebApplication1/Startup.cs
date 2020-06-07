@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -40,7 +41,7 @@ namespace WebApplication1
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSingleton<IProducts, ProductsRepository>();
             services.AddSingleton<IOrders, OrdersRepository>();
-            //services.Configure<ApiBehaviorOptions>(options =>
+            //services.Configure<Microsoft.AspNetCore.Mvc.ApiBehaviorOptions>(options =>
             //{
             //    options.InvalidModelStateResponseFactory = context =>
             //    {
@@ -55,15 +56,15 @@ namespace WebApplication1
             //    };
             //});
             services.AddControllers();
-            //services.AddCors(options =>
-            //{
-            //    options.AddDefaultPolicy(
-            //        builder =>
-            //        {
-            //            builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-            //        });
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                    });
 
-            //});
+            });
 
         }
 

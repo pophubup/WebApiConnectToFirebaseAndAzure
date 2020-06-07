@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Google.Apis.Logging;
 using Line.Messaging;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -20,18 +19,20 @@ namespace WebApplication1.Controllers
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly HttpContext _httpContext;
         private readonly LineBotConfig _lineBotConfig;
+        public readonly ILogger _logger;
 
-        public LineBotController(IServiceProvider serviceProvider, LineBotConfig lineBotConfig)
+        public LineBotController(IServiceProvider serviceProvider, LineBotConfig lineBotConfig, ILogger<LineBotController> logger)
         {
             _httpContextAccessor = serviceProvider.GetRequiredService<IHttpContextAccessor>();
             _httpContext = _httpContextAccessor.HttpContext;
             _lineBotConfig = lineBotConfig;
+            _logger = logger;
         }
-        public async Task<IActionResult> onMessageReply()
+        public async Task<IActionResult> Post()
         {
             try
             {
-                var events = await _httpContext.Request.GetWebhookEventsAsync("842dbf693e99e5fd75e83f8200250109", "U8e75dde4f4dddc3510f7a37200531788");
+                var events = await _httpContext.Request.GetWebhookEventsAsync("842dbf693e99e5fd75e83f8200250109");
                 var lineMessagingClient = new LineMessagingClient(_lineBotConfig.accessToken);
                 var lineBotApp = new LineBotApp(lineMessagingClient);
                 await lineBotApp.RunAsync(events);
