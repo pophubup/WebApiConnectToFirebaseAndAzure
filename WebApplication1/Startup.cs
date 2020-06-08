@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using WebApplication1.Models;
 using WebApplication1.Repo;
@@ -17,18 +16,8 @@ namespace WebApplication1
         public IConfiguration Configuration { get; }
         public Startup(IConfiguration configuration )
         {
-            //var configurationRoot = new ConfigurationBuilder()
-            //  .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-            //  .AddEnvironmentVariables()
-            //  .Build();
-
-
             Configuration = configuration;
         }
-
-      
-
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMemoryCache();
@@ -38,7 +27,7 @@ namespace WebApplication1
                 accessToken = Configuration["LineBot:accessToken"],
                 user_ID = Configuration["LineBot:user_ID"]
             });
-            services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSingleton<IProducts, ProductsRepository>();
             services.AddSingleton<IOrders, OrdersRepository>();
             services.Configure<Microsoft.AspNetCore.Mvc.ApiBehaviorOptions>(options =>
@@ -77,7 +66,7 @@ namespace WebApplication1
                 app.UseDeveloperExceptionPage();
             }
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            //app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthorization();
             app.UseCors();
