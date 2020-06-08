@@ -44,7 +44,7 @@ namespace WebApplication1
                     return result;
                 };
             });
-            services.AddControllersWithViews();
+            services.AddControllers();
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(
@@ -66,7 +66,6 @@ namespace WebApplication1
                 app.UseDeveloperExceptionPage();
             }
             app.UseHttpsRedirection();
-            //app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthorization();
             app.UseCors();
