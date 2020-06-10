@@ -2,11 +2,11 @@
 using Google.Cloud.Firestore;
 using Google.Cloud.Firestore.V1;
 using Grpc.Auth;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Auth;
 using Microsoft.WindowsAzure.Storage.Blob;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -18,10 +18,6 @@ namespace WebApplication1.Utility
     {
         
         private static PhysicalFileProvider _fileProvider = new PhysicalFileProvider(Directory.GetCurrentDirectory());
-        private static IConfiguration configuration = new ConfigurationBuilder()
-             .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-             .AddEnvironmentVariables()
-             .Build();
         private static CreateInstance instance = null;
         private static readonly object padlock = new object();
         private CreateInstance()
@@ -61,14 +57,22 @@ namespace WebApplication1.Utility
             get
             {
                 IFileInfo fileInfo = _fileProvider.GetFileInfo("appsettings.json");
-                string key1 = configuration["BlobStorageAccount:AccountName"];
-                string key2 = configuration["BlobStorageAccount:AccountKey"];
-                StorageCredentials storageCredentials = new StorageCredentials(key1, key2);
-                CloudStorageAccount account = new CloudStorageAccount(storageCredentials, true);
-                CloudBlobClient serviceClient = account.CreateCloudBlobClient();
-                CloudBlobContainer container = serviceClient.GetContainerReference("products");
+                Stream data = fileInfo.CreateReadStream();
+                using (StreamReader stream = new StreamReader(data))
+                {
+                   string content = stream.ReadToEnd();
+                   JToken jToken = JToken.Parse(content);
+                    string key1 = (string)jToken.SelectToken("BlobStorageAccount.AccountName");
+                    string key2 = (string)jToken.SelectToken("BlobStorageAccount.AccountKey");
+                    StorageCredentials storageCredentials = new StorageCredentials(key1, key2);
+                    CloudStorageAccount account = new CloudStorageAccount(storageCredentials, true);
+                    CloudBlobClient serviceClient = account.CreateCloudBlobClient();
+                    CloudBlobContainer container = serviceClient.GetContainerReference("products");
+
+                    return container;
+                }
+                   
              
-                return container;
             }
         }
         public IQueryable<Product> GetProducts()
