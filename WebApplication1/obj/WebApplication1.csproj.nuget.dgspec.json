@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\teres\\source\\repos\\Linbot66666\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\WebApplication1.csproj": {}
+    "C:\\Users\\teres\\Source\\Repos\\Linbot66666\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\WebApplication1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\teres\\source\\repos\\Linbot66666\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\WebApplication1.csproj": {
+    "C:\\Users\\teres\\Source\\Repos\\Linbot66666\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\teres\\source\\repos\\Linbot66666\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\WebApplication1.csproj",
+        "projectUniqueName": "C:\\Users\\teres\\Source\\Repos\\Linbot66666\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "C:\\Users\\teres\\source\\repos\\Linbot66666\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\WebApplication1.csproj",
+        "projectPath": "C:\\Users\\teres\\Source\\Repos\\Linbot66666\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\WebApplication1.csproj",
         "packagesPath": "C:\\Users\\teres\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\teres\\source\\repos\\Linbot66666\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\obj\\",
+        "outputPath": "C:\\Users\\teres\\Source\\Repos\\Linbot66666\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
