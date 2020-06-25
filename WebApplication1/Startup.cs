@@ -20,13 +20,14 @@ namespace WebApplication1
         }
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMemoryCache();
+           
             services.AddSingleton<LineBotConfig, LineBotConfig>((s) => new LineBotConfig
             {
                 channelSecret = Configuration["LineBot:channelSecret"],
                 accessToken = Configuration["LineBot:accessToken"],
                 user_ID = Configuration["LineBot:user_ID"]
             });
+          
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSingleton<IProducts, ProductsRepository>();
             services.AddSingleton<IOrders, OrdersRepository>();
@@ -44,7 +45,7 @@ namespace WebApplication1
                     return result;
                 };
             });
-            services.AddControllers();
+          
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(
@@ -54,7 +55,9 @@ namespace WebApplication1
                     });
 
             });
+            services.AddMemoryCache();
 
+            services.AddRazorPages();;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,11 +72,13 @@ namespace WebApplication1
             app.UseRouting();
             app.UseAuthorization();
             app.UseCors();
+         
             app.UseEndpoints(endpoints =>
             {         
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=default}/{action=GetProducts}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                
             });
         }
     }
