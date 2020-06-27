@@ -238,8 +238,8 @@ C:\Users\teres\Source\Repos\Linbot66666\WebApiConnectToFirebaseAndAzure\WebAppli
 C:\Users\teres\Source\Repos\Linbot66666\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
 C:\Users\teres\Source\Repos\Linbot66666\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\teres\Source\Repos\Linbot66666\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
-C:\Users\teres\Source\Repos\Linbot66666\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\Views\FireBaseApikey\getproducts-92bee-firebase-adminsdk-744dz-3461fb2344.json
 C:\Users\teres\Source\Repos\Linbot66666\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.csproj.CoreCompileInputs.cache
 C:\Users\teres\Source\Repos\Linbot66666\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\teres\Source\Repos\Linbot66666\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\teres\Source\Repos\Linbot66666\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Home\mySignalr.cshtml.g.cs
+C:\Users\teres\Source\Repos\Linbot66666\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\FireBaseApikey\getproducts-92bee-firebase-adminsdk-744dz-3461fb2344.json
