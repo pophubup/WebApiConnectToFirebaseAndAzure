@@ -36,5 +36,9 @@ namespace WebApplication1.Controllers
 
             return View(controllerActions);
         }
+        public IActionResult mySignalr()
+        {
+            return View();
+        }
     }
 }

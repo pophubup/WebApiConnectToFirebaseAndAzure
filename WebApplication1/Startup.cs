@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WebApplication1.Hubs;
 using WebApplication1.Models;
 using WebApplication1.Repo;
 
@@ -55,8 +56,9 @@ namespace WebApplication1
                     });
 
             });
+            services.AddControllersWithViews();
             services.AddMemoryCache();
-
+            services.AddSignalR();
             services.AddRazorPages();;
         }
 
@@ -69,8 +71,13 @@ namespace WebApplication1
                 app.UseDeveloperExceptionPage();
             }
             app.UseHttpsRedirection();
+
+            app.UseStaticFiles();
+
             app.UseRouting();
+
             app.UseAuthorization();
+
             app.UseCors();
          
             app.UseEndpoints(endpoints =>
@@ -78,7 +85,7 @@ namespace WebApplication1
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
-                
+                endpoints.MapHub<ChatHub>("/chathub");
             });
         }
     }
