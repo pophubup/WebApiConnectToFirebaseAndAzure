@@ -84,7 +84,7 @@ namespace WebApplication1
             {         
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=getWebapiData2}/{id?}");
                 endpoints.MapHub<ChatHub>("/chathub");
             });
         }
