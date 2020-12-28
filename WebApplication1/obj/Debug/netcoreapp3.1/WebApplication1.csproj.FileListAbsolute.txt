@@ -298,15 +298,11 @@ C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplic
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\runtimes\win\native\grpc_csharp_ext.x86.dll
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.AssemblyInfoInputs.cache
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.AssemblyInfo.cs
-C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.csproj.CoreCompileInputs.cache
-C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.RazorAssemblyInfo.cache
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.RazorAssemblyInfo.cs
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.TagHelpers.input.cache
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.TagHelpers.output.cache
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.RazorCoreGenerate.cache
-C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\Razor\Views\Home\mySignalr.cshtml.g.cs
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.RazorTargetAssemblyInfo.cache
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.RazorTargetAssemblyInfo.cs
@@ -315,3 +311,10 @@ C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplic
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.dll
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.pdb
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.genruntimeconfig.cache
+C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.csproj.CoreCompileInputs.cache
+C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.MvcApplicationPartsAssemblyInfo.cache

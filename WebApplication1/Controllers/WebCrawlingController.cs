@@ -16,6 +16,7 @@ namespace WebApplication1.Controllers
     [ApiController]
     public class WebCrawlingController : ControllerBase
     {
+        [HttpGet]
         public async Task<ActionResult> getFlaskApi()
         {
             var json = await new HttpClient().GetAsync("https://damp-mountain-73806.herokuapp.com/api/resources/test");
@@ -26,6 +27,7 @@ namespace WebApplication1.Controllers
                        select s1.Value;
             return Ok(data);
         }
+        [HttpGet]
         public async Task<ActionResult> getFlaskApi_fluentStyle() =>
                          from s2 in await WebApplication1.Utility.Helpers.Some(new HttpClient().GetAsync("https://damp-mountain-73806.herokuapp.com/api/resources/test"))
                         .Map(Helpers.parseJsonToStringAsync)
@@ -37,6 +39,7 @@ namespace WebApplication1.Controllers
                              OptionStatus.Error => StatusCode(500),
                              _ => NotFound()
                          };
+        [HttpGet]
         public IActionResult getFlaskApi_piplineStyle() => Ok(
             new HttpClient().GetAsync("https://damp-mountain-73806.herokuapp.com/api/resources/test")
             .parseJsonToString()

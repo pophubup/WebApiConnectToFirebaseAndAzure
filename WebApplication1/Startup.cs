@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using Microsoft.WindowsAzure.Storage.Blob;
 using WebApplication1.Hubs;
 using WebApplication1.Models;
@@ -38,6 +39,7 @@ namespace WebApplication1
             services.AddSingleton<ICloudClient<FirestoreDb, Order, OrderDetails>, FireBaseOrderRepository>();
             services.AddSingleton<IProduct, ProductService>();
             services.AddSingleton<IOrder, OrderService>();
+
             services.Configure<Microsoft.AspNetCore.Mvc.ApiBehaviorOptions>(options =>
             {
                 options.InvalidModelStateResponseFactory = context =>
@@ -64,6 +66,16 @@ namespace WebApplication1
             });
             services.AddControllersWithViews();
             services.AddMemoryCache();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "RestWebapi 串接各類雲端服務",
+                    Description = "目前串接雲端服務: AzureBlobstorage, Google Cloud Vision, FireBase 和 Python 爬蟲(selenium web scraping) ",
+                    
+                });
+            });
             services.AddSignalR();
             services.AddRazorPages();;
         }
@@ -79,18 +91,25 @@ namespace WebApplication1
             app.UseHttpsRedirection();
 
             app.UseStaticFiles();
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint(url : "/swagger/v1/swagger.json", name : "All RestWebApi");
+                c.RoutePrefix = string.Empty;
+            });
 
             app.UseRouting();
 
             app.UseAuthorization();
 
             app.UseCors();
-         
+            
             app.UseEndpoints(endpoints =>
-            {         
+            {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=mySignalr}/{id?}");
+                endpoints.MapControllers();
                 endpoints.MapHub<ChatHub>("/chathub");
             });
         }
