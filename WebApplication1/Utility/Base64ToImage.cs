@@ -39,6 +39,7 @@ namespace WebApplication1.Utility
             List<IFileInfo> list = new List<IFileInfo>();
             while (e.MoveNext())
             {
+                
                 list.Add(e.Current);
             }
             return list;

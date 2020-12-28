@@ -1,3 +1,4 @@
+using Google.Cloud.Firestore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -5,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.WindowsAzure.Storage.Blob;
 using WebApplication1.Hubs;
 using WebApplication1.Models;
 using WebApplication1.Repo;
+using WebApplication1.Repo.Service;
 
 namespace WebApplication1
 {
@@ -30,8 +33,11 @@ namespace WebApplication1
             });
           
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddSingleton<IProducts, ProductsRepository>();
-            services.AddSingleton<IOrders, OrdersRepository>();
+            services.AddSingleton<ICloudClient<FirestoreDb, Product, Product>,FireBaseProductRepository> ();
+            services.AddSingleton<ICloudClient<CloudBlobContainer, Product, Product>, AzureBlobStorageRepository>();
+            services.AddSingleton<ICloudClient<FirestoreDb, Order, OrderDetails>, FireBaseOrderRepository>();
+            services.AddSingleton<IProduct, ProductService>();
+            services.AddSingleton<IOrder, OrderService>();
             services.Configure<Microsoft.AspNetCore.Mvc.ApiBehaviorOptions>(options =>
             {
                 options.InvalidModelStateResponseFactory = context =>

@@ -1,8 +1,10 @@
 ﻿using Google.Cloud.Firestore;
+using Microsoft.Extensions.FileProviders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApplication1.Utility;
 
 namespace WebApplication1.Models
 {
@@ -23,5 +25,26 @@ namespace WebApplication1.Models
         public string ProductImagePath { get; set; }
         [FirestoreProperty]
         public int Quantity { get; set; } = 1;
+
+        public string FileType { 
+            get
+            {
+                return string.IsNullOrEmpty(ProductImagePath) ? string.Empty : $".{ProductImagePath.Split(',')[0].Split('/')[1]}";
+            } 
+        }
+        public IFileInfo fileInfo { 
+            get 
+            {
+                if(ProductName != null)
+                {
+                    return Base64ToImage.ConvertImagetoByteArray($"{ProductName}{FileType}");
+                }
+                else
+                {
+                    return null;
+                }
+                
+            } 
+        }
     }
 }
