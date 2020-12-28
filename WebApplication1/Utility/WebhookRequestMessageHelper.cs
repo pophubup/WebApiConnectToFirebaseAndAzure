@@ -27,13 +27,13 @@ namespace WebApplication1.Utility
                     content = await reader.ReadToEndAsync();
                 }
 
-                var xLineSignature = request.Headers["X-Line-Signature"].ToString();
-                if (string.IsNullOrEmpty(xLineSignature) || !VerifySignature(channelSecret, xLineSignature, content))
-                {
-                    throw new InvalidSignatureException("Signature validation faild.");
-                }
+            var xLineSignature = request.Headers["X-Line-Signature"].ToString();
+            if (string.IsNullOrEmpty(xLineSignature) || !VerifySignature(channelSecret, xLineSignature, content))
+            {
+                throw new InvalidSignatureException("Signature validation faild.");
+            }
 
-                dynamic json = JsonConvert.DeserializeObject(content);
+            dynamic json = JsonConvert.DeserializeObject(content);
 
                 if (!string.IsNullOrEmpty(botUserId))
                 {

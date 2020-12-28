@@ -28,16 +28,14 @@ namespace WebApplication1.Utility
                         var channelId = ev.Source.Id;
                         //使用者Id
                         var userId = ev.Source.UserId;
-
-                        //回傳 hellow
                         result = new List<ISendMessage>
                     {
-                        new TextMessage("hellow")
+                        new TextMessage($"{userId}{ev.Message}")
                     };
                     }
                     break;
             }
-
+            
             if (result != null)
                 await _messagingClient.ReplyMessageAsync(ev.ReplyToken, result);
         }
