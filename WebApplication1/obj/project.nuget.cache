@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OICZQoOpSz1sEYlpl41hR1Fj46JEo8GWf2Wb3AObBr25C92XKZArZilC7p6IapVGLwYe48X4401U1xzeYqyg0w==",
+  "dgSpecHash": "mBXJQOiwFAMG1USA27vVb7tZRaKO4/CSyv5xYbuPBXGVDN61UdmJ+uAwQ5AMjdMqtsxz9NuAvNG2ora1WwuR2w==",
   "success": true,
   "projectFilePath": "C:\\Users\\AllenHuang\\Desktop\\New folder\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
@@ -17,7 +17,6 @@
     "C:\\Users\\AllenHuang\\.nuget\\packages\\grpc.auth\\1.22.0\\grpc.auth.1.22.0.nupkg.sha512",
     "C:\\Users\\AllenHuang\\.nuget\\packages\\grpc.core\\1.22.1\\grpc.core.1.22.1.nupkg.sha512",
     "C:\\Users\\AllenHuang\\.nuget\\packages\\grpc.core.api\\1.22.1\\grpc.core.api.1.22.1.nupkg.sha512",
-    "C:\\Users\\AllenHuang\\.nuget\\packages\\line.messaging\\1.4.5\\line.messaging.1.4.5.nupkg.sha512",
     "C:\\Users\\AllenHuang\\.nuget\\packages\\linebotsdk\\2.1.21\\linebotsdk.2.1.21.nupkg.sha512",
     "C:\\Users\\AllenHuang\\.nuget\\packages\\microsoft.aspnet.cors\\5.2.7\\microsoft.aspnet.cors.5.2.7.nupkg.sha512",
     "C:\\Users\\AllenHuang\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",

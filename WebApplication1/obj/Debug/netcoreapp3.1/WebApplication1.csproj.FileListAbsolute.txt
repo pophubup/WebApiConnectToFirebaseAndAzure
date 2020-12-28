@@ -271,7 +271,6 @@ C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplic
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\Grpc.Auth.dll
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\Grpc.Core.dll
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\Grpc.Core.Api.dll
-C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\Line.Messaging.dll
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\LineBotSDK.dll
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\System.Web.Cors.dll
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
@@ -319,4 +318,3 @@ C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplic
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\RestWebapiGroup - Web Deploy\profile.arm.json
-C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.csprojAssemblyReference.cache

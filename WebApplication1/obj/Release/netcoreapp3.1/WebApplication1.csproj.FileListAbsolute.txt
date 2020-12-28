@@ -177,7 +177,6 @@ C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplic
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Release\netcoreapp3.1\Grpc.Auth.dll
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Release\netcoreapp3.1\Grpc.Core.dll
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Release\netcoreapp3.1\Grpc.Core.Api.dll
-C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Release\netcoreapp3.1\Line.Messaging.dll
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Release\netcoreapp3.1\LineBotSDK.dll
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Release\netcoreapp3.1\System.Web.Cors.dll
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Release\netcoreapp3.1\System.Net.Http.Formatting.dll

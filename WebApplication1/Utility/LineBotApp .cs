@@ -30,7 +30,7 @@ namespace WebApplication1.Utility
                         var userId = ev.Source.UserId;
                         result = new List<ISendMessage>
                     {
-                        new TextMessage($"{userId}{ev.Message}")
+                        new TextMessage($"{userId}")
                     };
                     }
                     break;

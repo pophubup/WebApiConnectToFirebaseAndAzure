@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Line.Messaging;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,25 +25,6 @@ namespace WebApplication1.Controllers
             _httpContext = _httpContextAccessor.HttpContext;
             _lineBotConfig = lineBotConfig;
             _logger = logger;
-        }
-        public async Task<IActionResult> Post()
-        {
-            try
-            {
-                var events = await _httpContext.Request.GetWebhookEventsAsync(_lineBotConfig.channelSecret);
-                var lineMessagingClient = new LineMessagingClient(_lineBotConfig.accessToken);
-                var lineBotApp = new LineBotApp(lineMessagingClient);
-                await lineBotApp.RunAsync(events);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return Content(ex.Message);
-            }
-
-
-
-
         }
         public IActionResult onMessagePushy()
         {
