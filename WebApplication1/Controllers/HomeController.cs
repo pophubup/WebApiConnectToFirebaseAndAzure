@@ -12,7 +12,6 @@ namespace WebApplication1.Controllers
 {
     public class HomeController : Controller
     {
-        
         public IActionResult mySignalr()
         {
             return View();
