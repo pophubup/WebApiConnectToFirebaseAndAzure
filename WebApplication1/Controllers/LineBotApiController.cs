@@ -76,13 +76,13 @@ namespace WebApplication1.Controllers
                         actions4.Add(new isRock.LineBot.UriAction() { label = "標題4-開啟URL", uri = new Uri("http://www.google.com") });
                         actions4.Add(new isRock.LineBot.PostbackAction() { label = "標題4-發生postack", data = "abc=aaa&def=111" });
 
-
+                        
                         List<Column> c = new List<Column>();
 
-                        c.Add(new Column() { title = "標題1", text = "ABC...敘述...", thumbnailImageUrl = new Uri("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShM4OsAL9Y7-4iGKI0mvP2WsQ3gQeEApOwnjsXdUs90dQe2ph8"), actions = actions1 });
-                        c.Add(new Column() { title = "標題2", text = "ABC...敘述...", thumbnailImageUrl = new Uri("https://media.istockphoto.com/photos/book-heart-picture-id503708758?k=6&m=503708758&s=612x612&w=0&h=5_lHyNzJazKgkoyIlDkbMS4s1eFANPqrsqQGY6t8Jwg="), actions = actions2 });
-                        c.Add(new Column() { title = "標題3", text = "ABC...敘述...", thumbnailImageUrl = new Uri("https://s3.eu-west-2.amazonaws.com/littlewriter-production/stories/4aKYJcQvuD.jpeg"), actions = actions3 });
-                        c.Add(new Column() { title = "標題4", text = "ABC...敘述...", thumbnailImageUrl = new Uri("https://github.com/apple-touch-icon.png/"), actions = actions4 });
+                        c.Add(new Column() { title = "標題1", text = "cccc.", actions = actions1 });
+                        c.Add(new Column() { title = "標題2", text = "fd..", actions = actions2 });
+                        c.Add(new Column() { title = "標題3", text = "Atr.", actions = actions3 });
+                        c.Add(new Column() { title = "標題4", text = "ABC...敘rtrt..", actions = actions4 });
 
                         var CarouselTemplate = new isRock.LineBot.CarouselTemplate()
                         {
@@ -91,7 +91,6 @@ namespace WebApplication1.Controllers
                         //發送
                         //bot.PushMessage(UserID, CarouselTemplate);
                         bot.ReplyMessage(_lineBotConfig.accessToken, new isRock.LineBot.TemplateMessage(CarouselTemplate));
-
                         //bot.ReplyMessage(ReplyToken, new Uri("https://external-tpe1-1.xx.fbcdn.net/safe_image.php?d=AQAc_b9uFr5VR0cg&w=476&h=249&url=fbstaging%3A%2F%2Fgraph.facebook.com%2Fstaging_resources%2FMDExMzQ5NDA3ODM1MDk4Nzg2OjI2MDY5NTAzMQ%3D%3D&cfs=1&upscale=1&_nc_hash=AQDJXtISk8IViKtg"));
                         break;
                     case "hi":
@@ -161,7 +160,7 @@ namespace WebApplication1.Controllers
                         break;
                 }
 
-                return Ok();
+                return Ok(UserSays.ToLower());
             }
             catch (Exception e)
             {
