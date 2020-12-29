@@ -202,6 +202,19 @@
           "lib/netstandard2.0/Grpc.Core.Api.dll": {}
         }
       },
+      "Line.Messaging/1.4.5": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "compile": {
+          "lib/netstandard1.3/Line.Messaging.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Line.Messaging.dll": {}
+        }
+      },
       "LineBotSDK/2.1.21": {
         "type": "package",
         "dependencies": {
@@ -3161,6 +3174,19 @@
         "lib/netstandard2.0/Grpc.Core.Api.dll",
         "lib/netstandard2.0/Grpc.Core.Api.pdb",
         "lib/netstandard2.0/Grpc.Core.Api.xml"
+      ]
+    },
+    "Line.Messaging/1.4.5": {
+      "sha512": "IIMWjqf3uWcTTBc1BBY/ou2R4oGLleDqcH7HHEj3glsSQoh2HPX+lpgakny+jWU08Zh3DIw9vPvp6cjOEiwF4w==",
+      "type": "package",
+      "path": "line.messaging/1.4.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard1.3/Line.Messaging.dll",
+        "lib/netstandard1.3/Line.Messaging.xml",
+        "line.messaging.1.4.5.nupkg.sha512",
+        "line.messaging.nuspec"
       ]
     },
     "LineBotSDK/2.1.21": {
@@ -8606,6 +8632,7 @@
       "Google.Cloud.Firestore.V1 >= 1.1.0",
       "Grpc.Auth >= 1.22.0",
       "Grpc.Core >= 1.22.1",
+      "Line.Messaging >= 1.4.5",
       "LineBotSDK >= 2.1.21",
       "Microsoft.AspNet.WebApi.Cors >= 5.2.7",
       "Microsoft.AspNetCore.Mvc >= 2.2.0",
@@ -8674,6 +8701,10 @@
           "Grpc.Core": {
             "target": "Package",
             "version": "[1.22.1, )"
+          },
+          "Line.Messaging": {
+            "target": "Package",
+            "version": "[1.4.5, )"
           },
           "LineBotSDK": {
             "target": "Package",

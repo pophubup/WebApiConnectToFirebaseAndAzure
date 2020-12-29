@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8oyC+JIRoXpME9nYV3R/9uXFEPMiPjrEEIZgfosN3EBLAb2MqmAUDqsPn0T3odm5rwsXv6hkEKRkBUJ1ywrRSg==",
+  "dgSpecHash": "na5FA3bw3CmOp3XCHu4p3cbvVnj95owmtaJ97MJi7qmbb31dguPYSJTJ0LJ43lFA9zIayg23t8CeNpd20SsB7w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Yohoo\\Desktop\\新增資料夾 (5)\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
@@ -17,6 +17,7 @@
     "C:\\Users\\Yohoo\\.nuget\\packages\\grpc.auth\\1.22.0\\grpc.auth.1.22.0.nupkg.sha512",
     "C:\\Users\\Yohoo\\.nuget\\packages\\grpc.core\\1.22.1\\grpc.core.1.22.1.nupkg.sha512",
     "C:\\Users\\Yohoo\\.nuget\\packages\\grpc.core.api\\1.22.1\\grpc.core.api.1.22.1.nupkg.sha512",
+    "C:\\Users\\Yohoo\\.nuget\\packages\\line.messaging\\1.4.5\\line.messaging.1.4.5.nupkg.sha512",
     "C:\\Users\\Yohoo\\.nuget\\packages\\linebotsdk\\2.1.21\\linebotsdk.2.1.21.nupkg.sha512",
     "C:\\Users\\Yohoo\\.nuget\\packages\\microsoft.aspnet.cors\\5.2.7\\microsoft.aspnet.cors.5.2.7.nupkg.sha512",
     "C:\\Users\\Yohoo\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
@@ -198,6 +199,12 @@
     "C:\\Users\\Yohoo\\.nuget\\packages\\windowsazure.storage\\9.3.3\\windowsazure.storage.9.3.3.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "讀取快取檔案 C:\\Users\\Yohoo\\Desktop\\新增資料夾 (5)\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\obj\\project.nuget.cache 時發生問題: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    },
     {
       "code": "NU1701",
       "level": "Warning",

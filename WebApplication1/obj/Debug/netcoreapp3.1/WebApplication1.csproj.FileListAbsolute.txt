@@ -314,9 +314,12 @@ C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplic
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\RestWebapiGroup - Web Deploy\profile.arm.json
+C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\Line.Messaging.dll
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.csproj.CoreCompileInputs.cache
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.MvcApplicationPartsAssemblyInfo.cache
+<<<<<<< HEAD
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\RestWebapiGroup - Web Deploy\profile.arm.json
 C:\Users\Yohoo\Desktop\新增資料夾 (5)\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Yohoo\Desktop\新增資料夾 (5)\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\appsettings.json
@@ -394,3 +397,6 @@ C:\Users\Yohoo\Desktop\新增資料夾 (5)\WebApiConnectToFirebaseAndAzure\WebAp
 C:\Users\Yohoo\Desktop\新增資料夾 (5)\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.dll
 C:\Users\Yohoo\Desktop\新增資料夾 (5)\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.pdb
 C:\Users\Yohoo\Desktop\新增資料夾 (5)\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.genruntimeconfig.cache
+=======
+C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.csprojAssemblyReference.cache
+>>>>>>> d7a3818d1d012c6870368791696479779a851851
