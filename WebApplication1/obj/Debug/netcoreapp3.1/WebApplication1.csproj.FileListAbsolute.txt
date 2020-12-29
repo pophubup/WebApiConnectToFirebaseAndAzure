@@ -314,7 +314,8 @@ C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplic
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\RestWebapiGroup - Web Deploy\profile.arm.json
+C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\Line.Messaging.dll
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.csproj.CoreCompileInputs.cache
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\RestWebapiGroup - Web Deploy\profile.arm.json

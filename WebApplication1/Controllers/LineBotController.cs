@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Line.Messaging;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,10 +27,11 @@ namespace WebApplication1.Controllers
             _lineBotConfig = lineBotConfig;
             _logger = logger;
         }
+      
         public IActionResult onMessagePushy()
         {
             //get configuration from appsettings.json
-            var token = _lineBotConfig.accessToken; ;
+            var token = _lineBotConfig.accessToken; 
             var AdminUserId = _lineBotConfig.user_ID;
             var body = ""; //for JSON Body
             //create vot instance

@@ -226,3 +226,4 @@ C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplic
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Release\netcoreapp3.1\WebApplication1.pdb
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\obj\Release\netcoreapp3.1\WebApplication1.genruntimeconfig.cache
 C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Release\netcoreapp3.1\Properties\ServiceDependencies\RestWebapiGroup - Web Deploy\profile.arm.json
+C:\Users\AllenHuang\Desktop\New folder\WebApiConnectToFirebaseAndAzure\WebApplication1\bin\Release\netcoreapp3.1\Line.Messaging.dll
