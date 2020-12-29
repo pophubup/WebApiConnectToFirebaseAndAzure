@@ -1,33 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\AllenHuang\\Desktop\\New folder\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\WebApplication1.csproj": {}
+    "C:\\Users\\Yohoo\\Desktop\\新增資料夾 (5)\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\WebApplication1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\AllenHuang\\Desktop\\New folder\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\WebApplication1.csproj": {
+    "C:\\Users\\Yohoo\\Desktop\\新增資料夾 (5)\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AllenHuang\\Desktop\\New folder\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\WebApplication1.csproj",
+        "projectUniqueName": "C:\\Users\\Yohoo\\Desktop\\新增資料夾 (5)\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "C:\\Users\\AllenHuang\\Desktop\\New folder\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\WebApplication1.csproj",
-        "packagesPath": "C:\\Users\\AllenHuang\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AllenHuang\\Desktop\\New folder\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\obj\\",
+        "projectPath": "C:\\Users\\Yohoo\\Desktop\\新增資料夾 (5)\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\WebApplication1.csproj",
+        "packagesPath": "C:\\Users\\Yohoo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Yohoo\\Desktop\\新增資料夾 (5)\\WebApiConnectToFirebaseAndAzure\\WebApplication1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\AllenHuang\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
+          "C:\\Users\\Yohoo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\DevExpress 19.2\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -39,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Google.Apis.Auth": {
               "target": "Package",
@@ -111,7 +111,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
